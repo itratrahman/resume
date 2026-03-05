@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Itrat Rahman - Single Page Resume</title>
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #d4a84b;
+      --bg: #ffffff;
+      --text: #2d3748;
+      --muted: #718096;
+      --white: #ffffff;
+      --line: #d4a84b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e8e8e8;
+      color: var(--text);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: 40px auto;
+      min-height: auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      background: var(--bg);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      background: var(--navy);
+      color: #e2e8f0;
+      padding: 40px 24px 40px;
+      position: relative;
+      align-self: stretch;
+    }
+
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      object-fit: cover;
+      background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    }
+
+    .avatar-placeholder {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 48px;
+      font-weight: 700;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #2d4a6d 0%, #1a2744 100%);
+      letter-spacing: 2px;
+    }
+
+    .side-section {
+      margin-top: 28px;
+    }
+
+    .side-title {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(212, 168, 75, 0.3);
+    }
+
+    .side-rule {
+      display: none;
+    }
+
+    .side-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .side-list li {
+      margin: 0 0 10px;
+      line-height: 1.5;
+      font-size: 14px;
+      color: #cbd5e0;
+      word-break: break-word;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .side-list li .icon {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      fill: var(--gold);
+    }
+
+    .side-list a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .side-list a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    .side-list .edu-title {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .side-list .edu-subtitle {
+      color: #a0aec0;
+      font-size: 13px;
+    }
+
+    .side-list .edu-detail {
+      color: #718096;
+      font-size: 12px;
+    }
+
+    .skills-section {
+      margin: 0;
+      padding: 0;
+    }
+
+    .skill-category {
+      margin-bottom: 16px;
+    }
+
+    .skill-category-title {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 4px;
+    }
+
+    .skill-category-items {
+      color: #cbd5e0;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .cert-item {
+      margin-bottom: 12px;
+    }
+
+    .cert-name {
+      color: #cbd5e0;
+      font-size: 13px;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .cert-name:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    .cert-source {
+      color: var(--gold);
+      font-size: 12px;
+      margin: 2px 0 0;
+    }
+
+    .languages-text {
+      color: #cbd5e0;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .main {
+      padding: 50px 60px 60px;
+      background: var(--white);
+    }
+
+    .name {
+      margin: 0 0 8px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 52px;
+      line-height: 1.1;
+      color: var(--navy);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .role {
+      margin: 0 0 6px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .subline {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 32px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .section-head::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .section-line {
+      display: none;
+    }
+
+    .summary {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #4a5568;
+      margin: 0;
+    }
+
+    .summary a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .summary a:hover {
+      text-decoration: underline;
+    }
+
+    .job {
+      margin-bottom: 28px;
+      page-break-inside: avoid;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 17px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .job-date {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      margin: 0 0 8px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .job-desc {
+      margin: 0 0 10px;
+      color: #718096;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    ul.bullets {
+      margin: 10px 0 0 0;
+      padding: 0 0 0 20px;
+    }
+
+    ul.bullets li {
+      margin: 0 0 8px;
+      line-height: 1.6;
+      font-size: 14px;
+      color: #4a5568;
+    }
+
+    ul.bullets li a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    ul.bullets li a:hover {
+      text-decoration: underline;
+    }
+
+    .simple-block {
+      margin-bottom: 20px;
+    }
+
+    .simple-block p {
+      margin: 0 0 10px;
+      line-height: 1.6;
+      font-size: 14px;
+      color: #4a5568;
+    }
+
+    .simple-block a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .simple-block a:hover {
+      text-decoration: underline;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .project-repo {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .project-repo:hover {
+      text-decoration: underline;
+    }
+
+    .project-repo .icon {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold);
+    }
+
+    .recommendations-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .recommendations-link:hover {
+      text-decoration: underline;
+    }
+
+    .recommendations-link .icon {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+    }
+
+    .footer-space {
+      height: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+        margin: 20px;
+        max-width: none;
+      }
+
+      .sidebar {
+        position: relative;
+      }
+
+      .main {
+        padding: 36px 26px 42px;
+      }
+
+      .name {
+        font-size: 38px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: relative;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="avatar-wrap">
+        <img src="profile_pic.jpg" alt="Itrat Rahman" class="avatar">
+      </div>
+
+      <section class="side-section">
+        <h2 class="side-title">Contact</h2>
+        <ul class="side-list">
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            832-670-1119
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            rahmanitrat@gmail.com
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Relocate anywhere in US
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <a href="http://www.linkedin.com/in/itratrahman" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/itratrahman" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <a href="https://itratrahman.github.io/" target="_blank">Website</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            <a href="https://www.linkedin.com/in/itratrahman/details/recommendations/" target="_blank">Recommendations</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2 class="side-title">Education</h2>
+        <ul class="side-list" style="display: block;">
+          <li style="display: block; margin-bottom: 4px;"><span class="edu-title">University College London</span></li>
+          <li style="display: block; margin-bottom: 4px;"><span class="edu-subtitle">Master of Engineering (Integrated 4-year)</span></li>
+          <li style="display: block; margin-bottom: 4px;"><span class="edu-subtitle">Electronic &amp; Electrical Engineering</span></li>
+          <li style="display: block; margin-bottom: 4px;"><span class="edu-title">First Class Honours</span></li>
+          <li style="display: block; margin-bottom: 4px;"><span class="edu-detail">Sept 2011 – June 2015</span></li>
+          <li style="display: block; margin-bottom: 0;"><span class="edu-detail">First Class all 4 years · 2014 UROS Studentship</span></li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2 class="side-title">Skills</h2>
+        <div class="skills-section">
+          <div class="skill-category">
+            <p class="skill-category-title">Data Science / ML:</p>
+            <p class="skill-category-items">Linear Algebra, Statistics, Algorithms & Data Structures, Data Visualization, A/B Testing, Classical ML, Deep Learning, SQL, Churn Analysis, Time Series Forecasting, NLP, NER</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">GenAI / AI Agents:</p>
+            <p class="skill-category-items">Embeddings, Semantic Search, Transformers, LLM, Diffusion, RAG, Vector DB, GAN, Agents, Chatbot, Machine Translation, Speech Recognition</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Computer Vision:</p>
+            <p class="skill-category-items">Binary Morphology, Perspective/Affine Transformation, Edge Detection, OCR, Object Segmentation & Detection, Facial Recognition, Video Generation</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Packages & Tools:</p>
+            <p class="skill-category-items">Python, NumPy, pandas, scipy, matplotlib, seaborn, bokeh, folium, Scikit-Learn, XGBoost, NLTK, PySpark, Dask, Looker Studio, Tableau</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">AI Frameworks:</p>
+            <p class="skill-category-items">Hugging Face, spaCy, TensorFlow/Keras, PyTorch, Optuna, OpenAI API, ChatGPT, GPT Actions, LangChain, LangGraph, Llama, LlamaIndex, OpenCV, Cursor AI, Copilot</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Dev Tools:</p>
+            <p class="skill-category-items">Git, GitHub, Linux, Bash, Flask, FastAPI, Docker, Docker Compose, Airflow, MLflow, CI/CD, MCP</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Databases:</p>
+            <p class="skill-category-items">MySQL, PostgreSQL, MongoDB, BigQuery, ChromaDB, Pinecone, Weaviate</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Cloud / Data Eng:</p>
+            <p class="skill-category-items">GCP Vertex AI, AWS SageMaker, Apache Spark, Dask, GCP Dataproc, Cloud Functions, Cloud Run, Azure Functions, AWS Lambda</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">MLOps / DataOps:</p>
+            <p class="skill-category-items">automating ML lifecycle using MLflow, orchestrating DataOps &amp; MLOps pipeline using Airflow, automating deployment using CI/CD pipeline via Jenkins</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Power Skills:</p>
+            <p class="skill-category-items">English &amp; Bengali Communication, PPT presentation, Client &amp; Stakeholder Communication, Team Management, Project Management using Jira</p>
+          </div>
+          <div class="skill-category">
+            <p class="skill-category-title">Domain Knowledge:</p>
+            <p class="skill-category-items">fintech, sms, telecom, facial image, pedestrian image, document OCR/parsing/inference, merchant onboarding, eKYC, crm, chemical industry, research &amp; patent literature, robotics, embedded systems</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-section">
+        <h2 class="side-title">Certifications</h2>
+        <div class="cert-item">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/BLLGXBBCZJMW" target="_blank" class="cert-name">Deep Learning (5 courses)</a>
+          <p class="cert-source">Coursera – Verified</p>
+        </div>
+        <div class="cert-item">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/DBGGPCRJZC4B?utm_product=s12n" target="_blank" class="cert-name">Machine Learning (4 courses)</a>
+          <p class="cert-source">Coursera – Verified</p>
+        </div>
+        <div class="cert-item">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/WR7WQN9X6WHV" target="_blank" class="cert-name">Data Eng & ML on GCP (5 courses)</a>
+          <p class="cert-source">Coursera – Verified</p>
+        </div>
+        <div class="cert-item">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/4HFPDHNJAEBH" target="_blank" class="cert-name">Python (5 courses)</a>
+          <p class="cert-source">Coursera – Verified</p>
+        </div>
+      </section>
+
+      <section class="side-section">
+        <h2 class="side-title">Languages</h2>
+        <p class="languages-text">English · Bengali</p>
+      </section>
+    </aside>
+
+    <main class="main">
+      <h1 class="name">Itrat Rahman</h1>
+      <p class="role">Senior AI Engineer / Data Scientist</p>
+      <p class="subline">UCL Graduate · H-1B Visa</p>
+
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Professional Summary</h2>
+        </div>
+        <p class="summary">Senior AI Engineer/Data Scientist with over 9 years of technical experience in Computer Vision, NLP, LLM, GenAI, Chatbot, Agentic AI, MLOps, Cloud Technologies, Big Data Analytics, and Data Science. Extensive hands-on AI/data product development and deployment experience; transformed pet projects into startup and SaaS products; wore multiple hats and worked beyond corporate boundaries for product launches, and attended client meetings to pitch products. Check out my detailed <a href="https://itratrahman.github.io/#bio" target="_blank">career bio</a>.</p>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Work Experience</h2>
+        </div>
+
+        <article class="job">
+          <div class="job-head">
+            <h3 class="job-title">Senior Data Scientist</h3>
+            <p class="job-date">April 2024 – Present</p>
+          </div>
+          <p class="job-company">Astute 360 Corporation — Texas, USA</p>
+          <p class="job-desc">Software consultancy developing in-house products and outsourcing consultants on C2C contracts.</p>
+          <ul class="bullets">
+            <li>Built and deployed a RAG-based agentic chatbot (GenAI, OpenAI, LangChain, LangGraph, EC2) that retrieves best-fit resumes from user prompts and supports multi-turn conversation, improving resume discovery speed and relevance. Developed a RAG ingestion pipeline that includes an LLM-based resume parser (GCP Vision API, LangChain) to extract and structure key resume fields with 99% extraction accuracy, storing documents and metadata in Pinecone for retrieval. Developed custom RAG retrieval policy using LangChain and implemented agentic flow using LangGraph. Implemented LLM-assisted evaluation for chatbot answer quality, achieving 95% accuracy on internal evaluation.</li>
+            <li>Trained a BERT model (Hugging Face, NVIDIA GPU) using TDSAE training scheme on the corpus of resume text to function as the embedder for the RAG vector search in the aforementioned chatbot. Orchestrated end-to-end retraining/hyperparameter optimization/export of the model using AWS SageMaker.</li>
+            <li>Trained a multimodal model (Hugging face, NVIDIA GPU) on resume images + text using CLIP-style contrastive loss and LoRA/QLoRA fine-tuning to enable downstream tasks such as embedding-based clustering and ranking.</li>
+            <li>Clustered resume types via hierarchical clustering on multimodal embeddings (content, layout aesthetics, applicant features) to support segmentation and analytics.</li>
+            <li>Developed a resume ranking model using linear methods over multimodal inputs + LLM-inferred similarity + LLM-extracted QA metrics to improve candidate ordering.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3 class="job-title">Generative AI Data Scientist (C2C contract)</h3>
+            <p class="job-date">March 2025 – September 2025</p>
+          </div>
+          <p class="job-company">Ascend Performance Materials — Texas, USA</p>
+          <p class="job-desc">World's largest fully integrated producer of nylon 66 resin. Developed generative AI applications on enterprise data.</p>
+          <ul class="bullets">
+            <li>Shipped a SharePoint RAG agent using Custom GPT + GPT Actions with Azure Functions middleware, driving 5x–10x faster literature review for R&amp;D stakeholders.</li>
+            <li>Delivered a Dynamics 365 CRM RAG agent where Custom GPT translates NL questions into OData queries, improving ad-hoc analytics productivity 1.5x–2x.</li>
+            <li>Built a spreadsheet-analysis Custom GPT that generates themed business reports, improving analyst throughput 5x–10x.</li>
+            <li>Automated monthly journal + patent scouting using SERPAPI + semantic/LLM search, reducing manual literature search workload by ~50%.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3 class="job-title">Senior Data Scientist</h3>
+            <p class="job-date">April 2020 – March 2024</p>
+          </div>
+          <p class="job-company">SSL Wireless — Dhaka, Bangladesh</p>
+          <p class="job-desc">Leading fintech and software corporation in Bangladesh. Promoted to senior role in January 2022; led, managed, and mentored data scientists.</p>
+          <ul class="bullets">
+            <li>Built an AI document verification system (Computer Vision, TensorFlow, PyTorch) for <a href="https://signup.sslcommerz.com/login" target="_blank">online merchant</a> onboarding, improving efficiency 40%; trained object detection models (~98% mAP).</li>
+            <li>Built a real-time multi-face recognition platform for camera streams; reached 99.5% accuracy. Supported creation of startup (<a href="https://www.linkedin.com/posts/ssl-wireless_introducing-mr-s-m-raihan-rashid-our-new-activity-7185589043747815424-K6pq?utm_source=share&utm_medium=member_desktop" target="_blank">SSL Sentinel</a>); onboarded 8 clients.</li>
+            <li>Trained and deployed Bengali ASR for merchant audio from CRM, achieving 2.63 Levenshtein distance on field-force speech.</li>
+            <li>Engineered a distributed pipeline processing 100M log rows/month, accelerating phases 6x–30x via Dask and concurrency.</li>
+            <li>Built AutoML forecasting for hourly/daily payment gateway volumes; validated campaign lift with A/B testing.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3 class="job-title">Data Scientist</h3>
+            <p class="job-date">January 2017 – March 2020</p>
+          </div>
+          <p class="job-company">Learners &amp; Yearners — Dhaka, Bangladesh</p>
+          <ul class="bullets">
+            <li>Designed and delivered an applied ML curriculum with code repositories, slides, and recorded lectures.</li>
+            <li>Built a Python package implementing core ML algorithms from scratch (Decision Trees, KNN, K-means).</li>
+            <li>Taught a 2-month data science bootcamp to 10–15 learners.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3 class="job-title">Junior Data Scientist</h3>
+            <p class="job-date">May 2016 - August 2016</p>
+          </div>
+          <p class="job-company">Southeast Bank Limited — Dhaka, Bangladesh</p>
+          <ul class="bullets">
+            <li>Developed optical character recognition software to convert raw bank documents into text documents.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3 class="job-title">Software Engineering Intern (AI/ML)</h3>
+            <p class="job-date">November 2015 - January 2016</p>
+          </div>
+          <p class="job-company">Insight Robotics Limited — Hong Kong</p>
+          <ul class="bullets">
+            <li>Developed an image-based smoke detection algorithm which halved the false alarm rate and improved detection rate.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+
+        <div class="project">
+          <div class="project-head">
+            <h3 class="project-title">Document Verification – EU Driving License</h3>
+            <a href="https://github.com/itratrahman/document_verification" target="_blank" class="project-repo">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              Repo
+            </a>
+          </div>
+          <ul class="bullets">
+            <li>Built a production-ready AI document verification system with 3-stage pipeline (EfficientNet-B0 → PaddleOCR → RetinaFace), achieving 95% end-to-end accuracy and &lt;2s inference. Productionized with FastAPI + async MongoDB logging + Docker.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-head">
+            <h3 class="project-title">Stock Market Agent</h3>
+            <a href="https://github.com/itratrahman/stock_market_agent" target="_blank" class="project-repo">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              Repo
+            </a>
+          </div>
+          <ul class="bullets">
+            <li>Built an AI stock analysis agent with 5-stage pipeline: FMP API → NeuralProphet forecasting → 30-day predictions → NewsAPI extraction → LangGraph agentic workflow with Ollama/Llama 3.2 for iterative synthesis and 3-tier investment recommendations.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-head">
+            <h3 class="project-title">ML Training Codebase</h3>
+            <a href="https://github.com/itratrahman/data_science_training" target="_blank" class="project-repo">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              Repo
+            </a>
+          </div>
+          <ul class="bullets">
+            <li>Built comprehensive data science curriculum with 50+ Jupyter notebooks covering 7 ML domains; implemented 15+ algorithms from scratch in NumPy with gradient descent, L1/L2 regularization, and modular utilities.</li>
+          </ul>
+        </div>
+      </section>
+
+      <a href="https://www.linkedin.com/in/itratrahman/details/recommendations/" target="_blank" class="recommendations-link">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+        View recommendations from industry professionals
+      </a>
+
+      <div class="footer-space"></div>
+    </main>
+  </div>
+</body>
+</html>
