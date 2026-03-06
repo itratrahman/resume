@@ -204,6 +204,25 @@
       margin: 0;
     }
 
+    .testimonial-item {
+      margin-bottom: 14px;
+    }
+
+    .testimonial-quote {
+      color: #cbd5e0;
+      font-size: 12px;
+      font-style: italic;
+      line-height: 1.5;
+      margin: 0 0 4px;
+    }
+
+    .testimonial-author {
+      color: var(--gold);
+      font-size: 11px;
+      margin: 0;
+      font-weight: 600;
+    }
+
     .main {
       padding: 50px 60px 60px;
       background: var(--white);
@@ -637,6 +656,50 @@
         <h2 class="side-title">Languages</h2>
         <p class="languages-text">English · Bengali</p>
       </section>
+
+      <section class="side-section">
+        <h2 class="side-title">Testimonials</h2>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"His contributions were pivotal in delivering key projects that significantly influenced new product development in the company."</p>
+          <p class="testimonial-author">Shahzada Redwan – Former CTO, SSL Wireless</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"His exceptional ability to develop algorithms and efficient solutions made a significant impact, and his technical expertise makes him a valuable asset."</p>
+          <p class="testimonial-author">Osaid Shahan Rahman – Former Deputy COO, SSL Wireless</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"He possesses deep knowledge in Machine Learning, Computer Vision, NLP, and Generative AI, and excels at translating complex challenges into scalable, data-driven solutions."</p>
+          <p class="testimonial-author">Ketan Nirpagare – Data Scientist, Ascend Performance Material</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"He excels in finding new ideas to grow the generative AI space within a company and quickly assimilates into fast-paced work cultures."</p>
+          <p class="testimonial-author">Arnet Tuazon – Project Manager, Ascend Performance Material</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"He consistently impressed me with his diverse skillset—proficient in Computer Vision, Natural Language Processing, and Big Data—with clear communication and a collaborative spirit."</p>
+          <p class="testimonial-author">Asruf-Ul Jubair – Former Principal Product Manager, SSL Wireless</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"He is a standout Data Scientist who combines deep technical expertise with the soft skills needed to turn AI systems into commercial successes."</p>
+          <p class="testimonial-author">Musarrat Rahman – Former Senior Data Scientist, SSL Wireless</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"His code bases were clear, effective, readable, and reproducible, and his leadership and mentorship enabled me to progress rapidly in my career."</p>
+          <p class="testimonial-author">Khadija Akter Lima – Former Data Scientist, SSL Wireless</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"Within two months he created a novel image-based smoke detection algorithm that the company implemented in its wildfire detection robots long term."</p>
+          <p class="testimonial-author">Tam Wai Ming – Former R&amp;D Manager, Insight Robotics</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"Itrat is an outstanding student who graduated with a first class MEng, showing consistently high academic performance and strong experimental and analytical skills."</p>
+          <p class="testimonial-author">Dr Edward Romans – Associate Professor, UCL EE Department &amp; LCN</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"His academic ability is outstanding; he achieved yearly exam averages at First Class level in every year of the programme."</p>
+          <p class="testimonial-author">Prof Robert Killey – Professor, UCL EE Department</p>
+        </div>
+      </section>
     </aside>
 
     <main class="main">
@@ -648,7 +711,7 @@
         <div class="section-head">
           <h2 class="section-title">Professional Summary</h2>
         </div>
-        <p class="summary">Senior AI Engineer/Data Scientist with over 9 years of technical experience in Computer Vision, NLP, LLM, GenAI, Chatbot, Agentic AI, MLOps, Cloud Technologies, Big Data Analytics, and Data Science. Extensive hands-on AI/data product development and deployment experience; transformed pet projects into startup and SaaS products; wore multiple hats and worked beyond corporate boundaries for product launches, and attended client meetings to pitch products. Check out my detailed <a href="https://itratrahman.github.io/#bio" target="_blank">career bio</a>.</p>
+        <p class="summary">I am a Senior AI Engineer/Data Scientist with over 9 years of technical experience and expertise in Computer Vision, NLP, LLM, GenAI, Chatbot, Agentic AI, MLOps, Cloud Technologies, Big Data Analytics, and Data Science. I have extensive hands-on AI/data product development and deployment experience; transformed pet projects into startup and SaaS products; wore multiple hats and worked beyond corporate boundaries for product launches, and attended client meetings to pitch products. Check out my detailed <a href="https://itratrahman.github.io/#bio" target="_blank">career bio</a>.</p>
       </section>
 
       <section class="section">
@@ -662,7 +725,7 @@
             <p class="job-date">April 2024 – Present</p>
           </div>
           <p class="job-company">Astute 360 Corporation — Texas, USA</p>
-          <p class="job-desc">Software consultancy developing in-house products and outsourcing consultants on C2C contracts.</p>
+          <p class="job-desc">Astute 360 Corporation is a software consultancy company in Texas, USA that develops in-house products and outsources consultants on C2C contracts. I worked as a GenAI Data Scientist at Ascend Performance Materials for 7 months.</p>
           <ul class="bullets">
             <li>Built and deployed a RAG-based agentic chatbot (GenAI, OpenAI, LangChain, LangGraph, EC2) that retrieves best-fit resumes from user prompts and supports multi-turn conversation, improving resume discovery speed and relevance. Developed a RAG ingestion pipeline that includes an LLM-based resume parser (GCP Vision API, LangChain) to extract and structure key resume fields with 99% extraction accuracy, storing documents and metadata in Pinecone for retrieval. Developed custom RAG retrieval policy using LangChain and implemented agentic flow using LangGraph. Implemented LLM-assisted evaluation for chatbot answer quality, achieving 95% accuracy on internal evaluation.</li>
             <li>Trained a BERT model (Hugging Face, NVIDIA GPU) using TDSAE training scheme on the corpus of resume text to function as the embedder for the RAG vector search in the aforementioned chatbot. Orchestrated end-to-end retraining/hyperparameter optimization/export of the model using AWS SageMaker.</li>
@@ -674,16 +737,19 @@
 
         <article class="job">
           <div class="job-head">
-            <h3 class="job-title">Generative AI Data Scientist (C2C contract)</h3>
+            <h3 class="job-title">Generative AI Data Scientist (C2C contract with Astute 360 Corp.)</h3>
             <p class="job-date">March 2025 – September 2025</p>
           </div>
           <p class="job-company">Ascend Performance Materials — Texas, USA</p>
-          <p class="job-desc">World's largest fully integrated producer of nylon 66 resin. Developed generative AI applications on enterprise data.</p>
+          <p class="job-desc">Ascend Performance Materials is the world's largest fully integrated producer of nylon 66 resin. I worked as a GenAI Data Scientist at Ascend on a C2C contract with my parent company, Astute 360 Corp, with Collabera as the implementation partner. My role was to develop generative AI applications on top of enterprise data.</p>
           <ul class="bullets">
-            <li>Shipped a SharePoint RAG agent using Custom GPT + GPT Actions with Azure Functions middleware, driving 5x–10x faster literature review for R&amp;D stakeholders.</li>
-            <li>Delivered a Dynamics 365 CRM RAG agent where Custom GPT translates NL questions into OData queries, improving ad-hoc analytics productivity 1.5x–2x.</li>
-            <li>Built a spreadsheet-analysis Custom GPT that generates themed business reports, improving analyst throughput 5x–10x.</li>
-            <li>Automated monthly journal + patent scouting using SERPAPI + semantic/LLM search, reducing manual literature search workload by ~50%.</li>
+            <li>Shipped a SharePoint RAG agent using Custom GPT + GPT Actions with Azure Functions middleware (MS Graph search → targeted extraction → response to GPT), driving 5x–10x faster literature review for R&amp;D stakeholders.</li>
+            <li>Delivered a Dynamics 365 CRM RAG agent where Custom GPT translates NL questions into OData queries; Azure Functions retrieves via Dataverse API, merges results, and runs QA using OpenAI + code interpreter, improving ad-hoc analytics productivity 1.5x–2x.</li>
+            <li>Built a spreadsheet-analysis Custom GPT that generates themed business reports with findings + recommendations, improving analyst throughput 5x–10x.</li>
+            <li>Created a SOP QA Custom GPT over multi-department safety procedures to improve on-the-spot access to protocols for high-risk plant operations.</li>
+            <li>Automated monthly journal + patent scouting using SERPAPI + semantic/LLM search, emailing top findings and reducing manual literature search workload by ~50%.</li>
+            <li>Designed a ChatGPT user-churn detection method from usage logs (drop-off in last 75 days + minimum monthly messages); used statistical analysis to set thresholds and automated churn reporting via email.</li>
+            <li>Built a secure pipeline to export ChatGPT workspace conversation logs to Rapid7 (daily + backfills, chunked payload delivery to webhook) to support compliance/audit archiving and enable GenAI adoption analytics.</li>
           </ul>
         </article>
 
@@ -693,13 +759,20 @@
             <p class="job-date">April 2020 – March 2024</p>
           </div>
           <p class="job-company">SSL Wireless — Dhaka, Bangladesh</p>
-          <p class="job-desc">Leading fintech and software corporation in Bangladesh. Promoted to senior role in January 2022; led, managed, and mentored data scientists.</p>
+          <p class="job-desc">SSL Wireless is the leading fintech and software corporation in Bangladesh, recognized as a top fintech company in the country. I was promoted to a senior role in January 2022 and had since then led, managed, and mentored the next generation of data scientists.</p>
           <ul class="bullets">
-            <li>Built an AI document verification system (Computer Vision, TensorFlow, PyTorch) for <a href="https://signup.sslcommerz.com/login" target="_blank">online merchant</a> onboarding, improving efficiency 40%; trained object detection models (~98% mAP).</li>
-            <li>Built a real-time multi-face recognition platform for camera streams; reached 99.5% accuracy. Supported creation of startup (<a href="https://www.linkedin.com/posts/ssl-wireless_introducing-mr-s-m-raihan-rashid-our-new-activity-7185589043747815424-K6pq?utm_source=share&utm_medium=member_desktop" target="_blank">SSL Sentinel</a>); onboarded 8 clients.</li>
-            <li>Trained and deployed Bengali ASR for merchant audio from CRM, achieving 2.63 Levenshtein distance on field-force speech.</li>
-            <li>Engineered a distributed pipeline processing 100M log rows/month, accelerating phases 6x–30x via Dask and concurrency.</li>
-            <li>Built AutoML forecasting for hourly/daily payment gateway volumes; validated campaign lift with A/B testing.</li>
+            <li>Built an AI document verification system (Computer Vision, TensorFlow, PyTorch, OpenCV, NVIDIA GPU) for <a href="https://signup.sslcommerz.com/login" target="_blank">online merchant</a> onboarding, improving onboarding efficiency 40%; trained document-scanning object detection models (~98% mAP) and resemblance checking binary classification models (~97% F1). Built OCR-based field extraction/validation with ~95% accuracy, reducing manual checks and improving onboarding quality. Productionized APIs with FastAPI + Docker and Jenkins CI/CD for reliable releases; automated end-to-end retraining/export of binary classification models with Airflow and implemented inference logging (MongoDB → BigQuery) powering near-real-time Looker Studio monitoring. Packaged the verification stack into a SaaS offering; supported customer pitching and onboarded 2 clients.</li>
+            <li>Built a real-time multi-face recognition platform (Computer Vision, TensorFlow, OpenCV, FastAPI, Docker, NVIDIA GPU) for camera streams; fine-tuned face recognition model for underrepresented faces and reached 99.5% accuracy on a custom test set. Deployed edge components (video streaming + face detection) on Jetson Nano and partnered with the engineering team to deliver real-time notifications plus a facial registration app (TensorFlow.js) that registers varied face poses. Supported creation of a dedicated sister company/startup (<a href="https://www.linkedin.com/posts/ssl-wireless_introducing-mr-s-m-raihan-rashid-our-new-activity-7185589043747815424-K6pq?utm_source=share&utm_medium=member_desktop" target="_blank">SSL Sentinel</a>); contributed to sales pitching and onboarded 8 clients.</li>
+            <li>Implemented an intrusion detection system (Computer Vision, TensorFlow, OpenCV, FastAPI, Docker, NVIDIA GPU) that flags pedestrians crossing polygon boundaries; deployed a pedestrian detector on Jetson Nano and collaborated on a full backend/frontend monitoring panel.</li>
+            <li>Trained and deployed Bengali ASR (GenAI, LLM, Hugging Face, FastAPI, Docker, GCP Cloud Run) for merchant audio from CRM, improving accuracy with augmentation and achieving 2.63 Levenshtein distance on field-force speech.</li>
+            <li>Built and deployed Bengali NER (spaCy) to extract products/prices/quantities with 95%+ accuracy, enabling structured downstream CRM workflows.</li>
+            <li>Built and deployed blink-based liveness/spoof detection and integrated into Android via TensorFlow Lite + Kotlin, achieving >99% accuracy on video samples.</li>
+            <li>Delivered a face verification service (Tensorflow, FastAPI, Docker, AWS Lambda) to confirm whether two photos belong to the same person, reaching 97% accuracy on a large photo-pair corpus.</li>
+            <li>Automated route optimization by pulling merchant locations (Google Maps) and generating short-distance routes, saving ~$500–$700 per area plus hundreds of manual hours.</li>
+            <li>Reduced manual NID image review by ~400 hours across 200K images using CV quality checks + clustering/z-score threshold tuning.</li>
+            <li>Built AutoML forecasting for hourly/daily payment gateway volumes; automated retraining/forecasting with Vertex AI + BigQuery and validated campaign lift with A/B testing, contributing to ~7% usage increases during campaign seasons.</li>
+            <li>Implemented a fraud detection service (MySQL geospatial search + FastAPI) to flag merchant name/location manipulation and alert CRM apps in near real time.</li>
+            <li>Engineered a distributed pipeline processing 100M log rows/month (MySQL → unified profiles in MongoDB→ tokenized BigQuery tables via Dataflow), accelerating phases 6x–30x via Dask, concurrency, and indexing; automated runs with cron. The pipeline forms the bedrock of all the analytics work done at SSL Wireless.</li>
           </ul>
         </article>
 
@@ -709,10 +782,12 @@
             <p class="job-date">January 2017 – March 2020</p>
           </div>
           <p class="job-company">Learners &amp; Yearners — Dhaka, Bangladesh</p>
+          <p class="job-desc">L&amp;Y is a start-up that aims to develop friendly and animated online courses in AI and machine learning.</p>
           <ul class="bullets">
-            <li>Designed and delivered an applied ML curriculum with code repositories, slides, and recorded lectures.</li>
-            <li>Built a Python package implementing core ML algorithms from scratch (Decision Trees, KNN, K-means).</li>
-            <li>Taught a 2-month data science bootcamp to 10–15 learners.</li>
+            <li>Designed and delivered an applied ML curriculum with code repositories, slides, and recorded lectures focused on low-level algorithm implementation.</li>
+            <li>Built a Python package implementing core ML algorithms from scratch (Decision Trees, KNN, K-means) and delivered small–medium EDA/predictive projects to reinforce concepts.</li>
+            <li>Taught a 2-month data science bootcamp to 10–15 learners, covering ML fundamentals and hands-on projects.</li>
+            <li>Contributed to startup business planning and pitching materials (business plan, pitch deck).</li>
           </ul>
         </article>
 
@@ -722,8 +797,9 @@
             <p class="job-date">May 2016 - August 2016</p>
           </div>
           <p class="job-company">Southeast Bank Limited — Dhaka, Bangladesh</p>
+          <p class="job-desc">Southeast Bank Limited is one of the mainstream local banks in Bangladesh.</p>
           <ul class="bullets">
-            <li>Developed optical character recognition software to convert raw bank documents into text documents.</li>
+            <li>Developed a fully-fledged optical character recognition software utilising advanced machine learning and computer vision techniques to convert raw bank documents into text documents.</li>
           </ul>
         </article>
 
@@ -733,8 +809,9 @@
             <p class="job-date">November 2015 - January 2016</p>
           </div>
           <p class="job-company">Insight Robotics Limited — Hong Kong</p>
+          <p class="job-desc">Insight Robotics is a Hong Kong Robotics company whose flagship product is a fire-detection robot.</p>
           <ul class="bullets">
-            <li>Developed an image-based smoke detection algorithm which halved the false alarm rate and improved detection rate.</li>
+            <li>Developed an image-based smoke detection algorithm utilising advanced machine learning and computer vision techniques, which halved the false alarm rate and improved the detection rate.</li>
           </ul>
         </article>
       </section>
@@ -753,7 +830,7 @@
             </a>
           </div>
           <ul class="bullets">
-            <li>Built a production-ready AI document verification system with 3-stage pipeline (EfficientNet-B0 → PaddleOCR → RetinaFace), achieving 95% end-to-end accuracy and &lt;2s inference. Productionized with FastAPI + async MongoDB logging + Docker.</li>
+            <li>Built a production-ready AI document verification system with 3-stage pipeline (EfficientNet-B0 binary classifier → PaddleOCR marker validation → RetinaFace detection), achieving 95% end-to-end accuracy and &lt;2s inference. Trained models on 3,866 images (97% validation F1) with Optuna hyperparameter optimization and MLflow tracking. Productionized with FastAPI + async MongoDB logging + Docker; implemented thread-safe inference, hot model reloading, and comprehensive health checks with pytest integration.</li>
           </ul>
         </div>
 
@@ -766,20 +843,20 @@
             </a>
           </div>
           <ul class="bullets">
-            <li>Built an AI stock analysis agent with 5-stage pipeline: FMP API → NeuralProphet forecasting → 30-day predictions → NewsAPI extraction → LangGraph agentic workflow with Ollama/Llama 3.2 for iterative synthesis and 3-tier investment recommendations.</li>
+            <li>Built an AI stock analysis agent with 5-stage pipeline: FMP API data ingestion → NeuralProphet forecasting (5yr daily data, 5 stocks) → 30-day predictions → NewsAPI article extraction with newspaper4k → LangGraph agentic workflow. Implemented conditional state machine routing forecast quality to news summarization, using Ollama/Llama 3.2 for iterative article synthesis and 3-tier investment recommendations. Outputs tabulated reports with forecast summaries (&lt;300 chars), news digests (&lt;1000 chars), and decision rationale (&lt;200 chars).</li>
           </ul>
         </div>
 
         <div class="project">
           <div class="project-head">
-            <h3 class="project-title">ML Training Codebase</h3>
+            <h3 class="project-title">Codebase of ML Training Program</h3>
             <a href="https://github.com/itratrahman/data_science_training" target="_blank" class="project-repo">
               <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               Repo
             </a>
           </div>
           <ul class="bullets">
-            <li>Built comprehensive data science curriculum with 50+ Jupyter notebooks covering 7 ML domains; implemented 15+ algorithms from scratch in NumPy with gradient descent, L1/L2 regularization, and modular utilities.</li>
+            <li>Built a comprehensive data science training curriculum with 50+ Jupyter notebooks covering 7 ML domains; implemented 15+ algorithms from scratch in NumPy (linear/logistic regression, decision trees, KNN, Naive Bayes, PCA). Developed modular ML library with gradient descent optimization, L1/L2 regularization, and utilities for preprocessing, model selection, and evaluation.</li>
           </ul>
         </div>
       </section>
