@@ -310,10 +310,9 @@
     .job-head {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
       gap: 16px;
       margin-bottom: 2px;
-      flex-wrap: wrap;
     }
 
     .job-title {
@@ -322,6 +321,7 @@
       font-size: 17px;
       color: var(--navy);
       font-weight: 700;
+      flex: 1;
     }
 
     .job-date {
@@ -330,6 +330,7 @@
       font-size: 14px;
       color: var(--muted);
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .job-company {
