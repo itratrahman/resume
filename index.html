@@ -454,6 +454,38 @@
       }
     }
 
+    .download-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--navy);
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      z-index: 1000;
+    }
+
+    .download-btn:hover {
+      background: #243557;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .download-btn .icon {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold);
+    }
+
     @media print {
       body {
         background: white;
@@ -467,10 +499,18 @@
         position: relative;
         min-height: auto;
       }
+
+      .download-btn {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+  <a href="https://docs.google.com/document/d/1opMUVGpilifckGpttsW3z9H1F_UFcTvrcnod3Uww2Wc/edit?usp=drive_link" target="_blank" class="download-btn">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Download Resume
+  </a>
   <div class="page">
     <aside class="sidebar">
       <div class="avatar-wrap">
