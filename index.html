@@ -912,7 +912,7 @@
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * nodeSpeed,
           vy: (Math.random() - 0.5) * nodeSpeed,
-          radius: Math.random() * 2 + 1
+          radius: Math.random() * 4 + 2
         });
       }
     }
@@ -946,7 +946,7 @@
             const opacity = (1 - distance / connectionDistance) * 0.5;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(26, 39, 68, ${opacity * 0.4})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 2;
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.stroke();
