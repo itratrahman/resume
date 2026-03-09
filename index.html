@@ -489,17 +489,17 @@
 
     .download-btn {
       position: fixed;
-      top: 10px;
-      right: 10px;
+      top: 5px;
+      right: 20px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 14px;
+      padding: 10px 14px;
       background: var(--navy);
       color: var(--gold);
       text-decoration: none;
       font-family: 'Segoe UI', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       border-radius: 4px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -514,8 +514,8 @@
     }
 
     .download-btn .icon {
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       fill: var(--gold);
     }
 
@@ -912,7 +912,7 @@
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * nodeSpeed,
           vy: (Math.random() - 0.5) * nodeSpeed,
-          radius: Math.random() * 4 + 2
+          radius: Math.random() * 6 + 4
         });
       }
     }
@@ -946,7 +946,7 @@
             const opacity = (1 - distance / connectionDistance) * 0.5;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(26, 39, 68, ${opacity * 0.4})`;
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 3;
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.stroke();
